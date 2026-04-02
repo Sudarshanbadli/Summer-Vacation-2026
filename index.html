@@ -1,0 +1,500 @@
+<!DOCTYPE html>
+<html lang="kn">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Shri Mahaveer Kannada Medium School - Hukkeri</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+Kannada:wght@400;600;700;900&display=swap" rel="stylesheet">
+    <style>
+        body {
+            font-family: 'Noto Sans Kannada', sans-serif;
+            background-color: #fff8f0;
+        }
+        .gradient-text {
+            background: linear-gradient(to right, #d946ef, #8b5cf6);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+        .school-card {
+            transition: transform 0.3s ease;
+        }
+        .school-card:hover {
+            transform: translateY(-5px);
+        }
+        .btn-pulse {
+            animation: pulse-animation 2s infinite;
+        }
+        @keyframes pulse-animation {
+            0% { box-shadow: 0 0 0 0px rgba(239, 68, 68, 0.7); }
+            100% { box-shadow: 0 0 0 10px rgba(239, 68, 68, 0); }
+        }
+        /* Carousel Styles */
+        .carousel-container {
+            position: relative;
+            overflow: hidden;
+            border-radius: 1rem;
+            box-shadow: 0 10px 25px -5px rgba(0, 0, 0, 0.1), 0 10px 10px -5px rgba(0, 0, 0, 0.04);
+        }
+        .carousel-track {
+            display: flex;
+            transition: transform 0.5s ease-in-out;
+            height: 100%;
+        }
+        .carousel-slide {
+            min-width: 100%;
+            height: 400px; /* Default height */
+            position: relative;
+        }
+        .carousel-slide img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+        .carousel-caption {
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            right: 0;
+            background: linear-gradient(to top, rgba(0,0,0,0.8), transparent);
+            padding: 2rem 1rem 1rem;
+            color: white;
+        }
+        @media (max-width: 768px) {
+            .carousel-slide {
+                height: 250px;
+            }
+        }
+        /* Custom scrollbar */
+        ::-webkit-scrollbar {
+            width: 8px;
+        }
+        ::-webkit-scrollbar-track {
+            background: #f1f1f1; 
+        }
+        ::-webkit-scrollbar-thumb {
+            background: #ec4899; 
+            border-radius: 4px;
+        }
+        ::-webkit-scrollbar-thumb:hover {
+            background: #db2777; 
+        }
+    </style>
+</head>
+<body class="text-gray-800">
+
+    <!-- Navigation / Header -->
+    <nav class="bg-pink-600 text-white shadow-lg sticky top-0 z-50">
+        <div class="container mx-auto px-4 py-2 md:py-3 flex justify-between items-center">
+            <div class="flex items-center space-x-3">
+                <!-- Logo Placeholder -->
+               <a href="https://iili.io/BB9Gq7e.png" class="inline-flex items-center">
+  <img 
+    src="logo.png" 
+    alt="Website Logo" 
+    class="w-12 h-12 rounded-full border-2 border-yellow-400 shadow-md hover:scale-105 transition"
+  >
+</a>
+                <div>
+                    <h1 class="text-lg md:text-xl font-bold leading-tight">ಶ್ರೀ ಮಹಾವೀರ ಕನ್ನಡ ಮಾಧ್ಯಮ ಶಾಲೆ ಹುಕ್ಕೇರಿ</h1>
+                    <p class="text-xs md:text-sm text-yellow-300"> NA-0488</p>
+                </div>
+            </div>
+            <a href="tel:9448389055" class="hidden md:flex items-center bg-yellow-400 text-pink-800 px-4 py-2 rounded-full font-bold hover:bg-yellow-300 transition shadow-md">
+                <svg class="w-5 h-5 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 5a2 2 0 012-2h3.28a1 1 0 01.948.684l1.498 4.493a1 1 0 01-.502 1.21l-2.257 1.13a11.042 11.042 0 005.516 5.516l1.13-2.257a1 1 0 011.21-.502l4.493 1.498a1 1 0 01.684.949V19a2 2 0 01-2 2h-1C9.716 21 3 14.284 3 6V5z"></path></svg>
+                ಸಂಪರ್ಕಿಸಿ
+            </a>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <header class="relative bg-gradient-to-b from-pink-100 to-white pb-8 pt-6">
+        <div class="container mx-auto px-4 text-center">
+            <span class="inline-block bg-red-600 text-white px-6 py-2 rounded-full text-lg font-bold shadow-md mb-4 animate-bounce">
+                14ನೇ ವರ್ಷದ ಬೇಸಿಗೆ ಶೈಕ್ಷಣಿಕ ಶಿಬಿರ
+            </span>
+            <h2 class="text-3xl md:text-5xl font-black text-pink-700 mb-4">2025-26ನೇ ಸಾಲಿನ ಪ್ರವೇಶಾತಿ ಆರಂಭ</h2>
+            <p class="text-xl text-gray-600 font-semibold">L.K.G. ಯಿಂದ 10ನೇ ತರಗತಿಯವರೆಗೆ ಪ್ರವೇಶಾತಿ</p>
+        </div>
+    </header>
+
+    <!-- Auto Swiping Image Carousel -->
+    <section class="py-6 bg-white">
+        <div class="container mx-auto px-4">
+            <h3 class="text-2xl font-bold text-center text-gray-800 mb-6">ನಮ್ಮ ಶಾಲೆಯ ನೋಟ</h3>
+            <div class="carousel-container group">
+                <div class="carousel-track" id="carouselTrack">
+                    <!-- Slide 1: Building -->
+                    <div class="carousel-slide">
+                        <img src="https://iili.io/BB9tS3l.jpg" alt="School Building">
+                        <div class="carousel-caption">
+                            <h4 class="text-xl font-bold">ಆಧುನಿಕ ಶಾಲಾ ಕಟ್ಟಡ</h4>
+                            <p class="text-sm">ವಿದ್ಯಾರ್ಥಿಗಳಿಗೆ ಉತ್ತಮ ವಾತಾವರಣ</p>
+                        </div>
+                    </div>
+                    <!-- Slide 2: Computer Lab -->
+                    <div class="carousel-slide">
+                        <img src="https://iili.io/BBHueoX.jpg" alt="Computer Lab">
+                        <div class="carousel-caption">
+                            <h4 class="text-xl font-bold">ಕಂಪ್ಯೂಟರ್ ಲ್ಯಾಬ್</h4>
+                            <p class="text-sm">ತಂತ್ರಜ್ಞಾನದೊಂದಿಗೆ ಶಿಕ್ಷಣ</p>
+                        </div>
+                    </div>
+                    <!-- Slide 3: Library -->
+                    <div class="carousel-slide">
+                        <img src="https://iili.io/BBHfd5g.jpg" alt="Library">
+                        <div class="carousel-caption">
+                            <h4 class="text-xl font-bold">ಶಾಲಾ ವಾಹನ</h4>
+                            <p class="text-sm">ಸುರಕ್ಷಿತ ಪ್ರಯಾಣ</p>
+                        </div>
+                    </div>
+                    <!-- Slide 4: Science Lab -->
+                    <div class="carousel-slide">
+                        <img src="https://iili.io/BBHdXyv.jpg" alt="Science Lab">
+                        <div class="carousel-caption">
+                            <h4 class="text-xl font-bold">ವಿಜ್ಞಾನ ಪ್ರಯೋಗಶಾಲೆ</h4>
+                            <p class="text-sm">ಪ್ರಾಯೋಗಿಕ ಜ್ಞಾನಕ್ಕೆ ಪ್ರಾಶಸ್ತ್ಯ</p>
+                        </div>
+                    </div>
+                    <!-- Slide 5: Sports -->
+                    <div class="carousel-slide">
+                        <img src="https://iili.io/BB9yDp2.jpg" alt="Sports Ground">
+                        <div class="carousel-caption">
+                            <h4 class="text-xl font-bold">ಕ್ರೀಡಾಂಗಣ</h4>
+                            <p class="text-sm">ಶಾರೀರಿಕ ಮತ್ತು ಮಾನಸಿಕ ಆರೋಗ್ಯ</p>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Controls -->
+                <button id="prevBtn" class="absolute left-2 top-1/2 transform -translate-y-1/2 bg-black/50 hover:bg-black/70 text-white p-2 rounded-full opacity-0 group-hover:opacity-100 transition duration-300">
+                    <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 19l-7-7 7-7"></path></svg>
+                </button>
+                <button id="nextBtn" class="absolute right-2 top-1/2 transform -translate-y-1/2 bg-black/50 hover:bg-black/70 text-white p-2 rounded-full opacity-0 group-hover:opacity-100 transition duration-300">
+                    <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"></path></svg>
+                </button>
+                
+                <!-- Indicators -->
+                <div class="absolute bottom-4 left-1/2 transform -translate-x-1/2 flex space-x-2">
+                    <div class="w-3 h-3 bg-white rounded-full cursor-pointer indicator active-indicator" data-index="0"></div>
+                    <div class="w-3 h-3 bg-white/50 rounded-full cursor-pointer indicator" data-index="1"></div>
+                    <div class="w-3 h-3 bg-white/50 rounded-full cursor-pointer indicator" data-index="2"></div>
+                    <div class="w-3 h-3 bg-white/50 rounded-full cursor-pointer indicator" data-index="3"></div>
+                    <div class="w-3 h-3 bg-white/50 rounded-full cursor-pointer indicator" data-index="4"></div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Admission & Dates -->
+    <section class="py-10 bg-white border-t border-gray-100">
+        <div class="container mx-auto px-4">
+            <div class="grid md:grid-cols-2 gap-8">
+                <!-- Admission Info -->
+                <div class="bg-blue-50 p-6 rounded-xl border-l-4 border-blue-500 shadow-sm">
+                    <h3 class="text-2xl font-bold text-blue-800 mb-4 flex items-center">
+                        <svg class="w-8 h-8 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 6.253v13m0-13C10.832 5.477 9.246 5 7.5 5S4.168 5.477 3 6.253v13C4.168 18.477 5.754 18 7.5 18s3.332.477 4.5 1.253m0-13C13.168 5.477 14.754 5 16.5 5c1.747 0 3.332.477 4.5 1.253v13C19.832 18.477 18.247 18 16.5 18c-1.746 0-3.332.477-4.5 1.253"></path></svg>
+                        ಪ್ರವೇಶಾತಿ ವಿವರಗಳು
+                    </h3>
+                    <p class="text-gray-700 mb-4 leading-relaxed">
+                        ಶ್ರೀ ಮಹಾವೀರ ಕನ್ನಡ ಮಾಧ್ಯಮ ಶಾಲೆಯಲ್ಲಿ 2025-26ನೇ ಸಾಲಿನ ಬೇಸಿಗೆ ಶಿಬಿರ ಪ್ರವೇಶಾತಿ ಆರಂಭವಾಗಿದೆ. 
+                        ಎಲ್.ಕೆ.ಜಿ. (L.K.G.) ಯಿಂದ ಹತ್ತನೇ ತರಗತಿಯವರೆಗೆ (10th Std) ಪ್ರವೇಶಾತಿ ನೀಡಲಾಗುವುದು.
+                    </p>
+                    <ul class="space-y-2 text-gray-700">
+                        <li class="flex items-center"><span class="w-2 h-2 bg-pink-500 rounded-full mr-2"></span>ಆಧುನಿಕ ಪಠ್ಯಕ್ರಮ</li>
+                        <li class="flex items-center"><span class="w-2 h-2 bg-pink-500 rounded-full mr-2"></span>ಅನುಭವಿ ಶಿಕ್ಷಕರು</li>
+                        <li class="flex items-center"><span class="w-2 h-2 bg-pink-500 rounded-full mr-2"></span>ವಿಶಾಲ ಹಾಗೂ ಸುಸಜ್ಜಿತ ಕೋಣೆಗಳು</li>
+                    </ul>
+                </div>
+
+                <!-- Important Dates -->
+                <div class="bg-pink-50 p-6 rounded-xl border-r-4 border-pink-500 shadow-sm flex flex-col justify-center">
+                    <h3 class="text-2xl font-bold text-pink-800 mb-4 text-center">ಪ್ರವೇಶಾತಿ ಅವಧಿ</h3>
+                    <div class="bg-white p-4 rounded-lg shadow-inner text-center mb-4">
+                        <p class="text-sm text-gray-500 uppercase tracking-wide">ದಿನಾಂಕಗಳು</p>
+                        <p class="text-2xl font-bold text-pink-600">10-04-2026 ರಿಂದ 25-05-2026</p>
+                    </div>
+                    <div class="bg-white p-4 rounded-lg shadow-inner text-center">
+                        <p class="text-sm text-gray-500 uppercase tracking-wide">ಸಮಯ</p>
+                        <p class="text-xl font-bold text-blue-600">ಬೆಳಿಗ್ಗೆ 9:30 ರಿಂದ ಮಧ್ಯಾಹ್ನ 3:00</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Fee Structure -->
+    <section class="py-10 bg-gray-50">
+        <div class="container mx-auto px-4">
+            <h2 class="text-3xl font-bold text-center text-gray-800 mb-8">ಶುಲ್ಕ ವಿವರಗಳು (Fee Structure)</h2>
+            <div class="overflow-x-auto rounded-xl shadow-lg border border-gray-200">
+                <table class="w-full text-left border-collapse">
+                    <thead>
+                        <tr class="bg-pink-600 text-white">
+                            <th class="p-4 font-bold">ವರ್ಗಗಳು (Class)</th>
+                            <th class="p-4 font-bold">ಒಳಗೊಂಡಿರುವ ವಿಷಯಗಳು</th>
+                            <th class="p-4 font-bold text-right">ಶುಲ್ಕ (ರೂ.)</th>
+                        </tr>
+                    </thead>
+                    <tbody class="bg-white divide-y divide-gray-200">
+                        <tr class="hover:bg-pink-50 transition">
+                            <td class="p-4 font-bold text-pink-700">ಎಲ್.ಕೆ.ಜಿ / ಯು.ಕೆ.ಜಿ</td>
+                            <td class="p-4">ಕನ್ನಡ, ಇಂಗ್ಲಿಷ್, ಗಣಿತ, ಕಥೆ ಕಾವ್ಯ</td>
+                            <td class="p-4 text-right font-bold text-green-600">1500.00</td>
+                        </tr>
+                        <tr class="hover:bg-pink-50 transition">
+                            <td class="p-4 font-bold text-pink-700">1ನೇ / 2ನೇ ವರ್ಗ</td>
+                            <td class="p-4">ಗಣಿತ, ಇಂಗ್ಲಿಷ್, ಪರಿಸರ</td>
+                            <td class="p-4 text-right font-bold text-green-600">2000.00</td>
+                        </tr>
+                        <tr class="hover:bg-pink-50 transition">
+                            <td class="p-4 font-bold text-pink-700">3ನೇ / 4ನೇ ವರ್ಗ</td>
+                            <td class="p-4">ಗಣಿತ, ಇಂಗ್ಲಿಷ್, ಪರಿಸರ</td>
+                            <td class="p-4 text-right font-bold text-green-600">2500.00</td>
+                        </tr>
+                        <tr class="hover:bg-pink-50 transition">
+                            <td class="p-4 font-bold text-pink-700">5ನೇ ಸರ್ವೋದಯ ವರ್ಗ</td>
+                            <td class="p-4">ಗಣಿತ ವಿಜ್ಞಾನ, ಮಾನಸಿಕ ಸಾಮರ್ಥ್ಯ</td>
+                            <td class="p-4 text-right font-bold text-green-600">3800.00</td>
+                        </tr>
+                        <tr class="hover:bg-pink-50 transition">
+                            <td class="p-4 font-bold text-pink-700">6 ರಿಂದ 7ನೇ ವರ್ಗ</td>
+                            <td class="p-4">ಗಣಿತ, ವಿಜ್ಞಾನ, ಇಂಗ್ಲಿಷ್, (ಹಿಂದಿ/ಕನ್ನಡ)</td>
+                            <td class="p-4 text-right font-bold text-green-600">2800.00</td>
+                        </tr>
+                        <tr class="hover:bg-pink-50 transition">
+                            <td class="p-4 font-bold text-pink-700">8 ರಿಂದ 9ನೇ ವರ್ಗ</td>
+                            <td class="p-4">ಗಣಿತ, ವಿಜ್ಞಾನ, ಇಂಗ್ಲಿಷ್, (ಹಿಂದಿ/ಕನ್ನಡ)</td>
+                            <td class="p-4 text-right font-bold text-green-600">3000.00</td>
+                        </tr>
+                        <tr class="hover:bg-pink-50 transition bg-yellow-50">
+                            <td class="p-4 font-bold text-pink-700">10ನೇ ವರ್ಗ (SSLC)</td>
+                            <td class="p-4">ಗಣಿತ, ವಿಜ್ಞಾನ, ಇಂಗ್ಲಿಷ್, (ಹಿಂದಿ/ಕನ್ನಡ)</td>
+                            <td class="p-4 text-right font-bold text-green-600">4000.00</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </section>
+
+    <!-- Facilities Grid -->
+    <section class="py-10 bg-white">
+        <div class="container mx-auto px-4">
+            <h2 class="text-3xl font-bold text-center text-gray-800 mb-8">ನಮ್ಮ ಸೌಲಭ್ಯಗಳು</h2>
+            <div class="grid grid-cols-2 md:grid-cols-4 gap-4">
+                <!-- Card 1 -->
+                <div class="school-card bg-blue-50 p-4 rounded-lg text-center border border-blue-100">
+                    <div class="text-4xl mb-2">🚌</div>
+                    <h4 class="font-bold text-blue-800"> ಉಚಿತ ಶಾಲಾವಾಹನ</h4>
+                    <p class="text-xs text-gray-600 mt-1">ಸುರಕ್ಷಿತ ಸಾರಿಗೆ ವ್ಯವಸ್ಥೆ</p>
+                </div>
+                <!-- Card 2 -->
+                <div class="school-card bg-green-50 p-4 rounded-lg text-center border border-green-100">
+                    <div class="text-4xl mb-2">🔬</div>
+                    <h4 class="font-bold text-green-800">ಪ್ರಯೋಗಾಲಯ</h4>
+                    <p class="text-xs text-gray-600 mt-1">ಪ್ರಾಯೋಗಿಕ ಶಿಕ್ಷಣ</p>
+                </div>
+                <!-- Card 3 -->
+                <div class="school-card bg-purple-50 p-4 rounded-lg text-center border border-purple-100">
+                    <div class="text-4xl mb-2">📚</div>
+                    <h4 class="font-bold text-purple-800">ಗ್ರಂಥಾಲಯ</h4>
+                    <p class="text-xs text-gray-600 mt-1">ವಿಶಾಲವಾದ ಪುಸ್ತಕ ಭಂಡಾರ</p>
+                </div>
+                <!-- Card 4 -->
+                <div class="school-card bg-orange-50 p-4 rounded-lg text-center border border-orange-100">
+                    <div class="text-4xl mb-2">⚽</div>
+                    <h4 class="font-bold text-orange-800">ಕ್ರೀಡಾಂಗಣ</h4>
+                    <p class="text-xs text-gray-600 mt-1">ಶಾರೀರಿಕ ಚಟುವಟಿಕೆಗಳು</p>
+                </div>
+                <!-- Card 5 -->
+                <div class="school-card bg-red-50 p-4 rounded-lg text-center border border-red-100">
+                    <div class="text-4xl mb-2">💻</div>
+                    <h4 class="font-bold text-red-800">ಗಣಕಯಂತ್ರ ಶಿಕ್ಷಣ</h4>
+                    <p class="text-xs text-gray-600 mt-1">ಆಧುನಿಕ ತಂತ್ರಜ್ಞಾನ</p>
+                </div>
+                <!-- Card 6 -->
+                <div class="school-card bg-teal-50 p-4 rounded-lg text-center border border-teal-100">
+                    <div class="text-4xl mb-2">🏆</div>
+                    <h4 class="font-bold text-teal-800">ಒಳಾಂಗಣ ಆಟಗಳ ಕಲಿಕೆ</h4>
+                    <p class="text-xs text-gray-600 mt-1">ಏಕಾಗ್ರತೆ ಶಿಕ್ಷಣ</p>
+                </div>
+                <!-- Card 7 -->
+                <div class="school-card bg-indigo-50 p-4 rounded-lg text-center border border-indigo-100">
+                    <div class="text-4xl mb-2">👩‍</div>
+                    <h4 class="font-bold text-indigo-800">ಅನುಭವಿ ಶಿಕ್ಷಕರು</h4>
+                    <p class="text-xs text-gray-600 mt-1">ಗುಣಮಟ್ಟದ ಶಿಕ್ಷಣ</p>
+                </div>
+                <!-- Card 8 -->
+                <div class="school-card bg-yellow-50 p-4 rounded-lg text-center border border-yellow-100">
+                    <div class="text-4xl mb-2">🚰</div>
+                    <h4 class="font-bold text-yellow-800">ಶುದ್ಧ ಕುಡಿಯುವ ನೀರು</h4>
+                    <p class="text-xs text-gray-600 mt-1">RO ವ್ಯವಸ್ಥೆ</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Transport Routes -->
+    <section class="py-10 bg-pink-600 text-white">
+        <div class="container mx-auto px-4">
+            <h2 class="text-3xl font-bold text-center mb-8 flex items-center justify-center">
+                <svg class="w-8 h-8 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8 7h12m0 0l-4-4m4 4l-4 4m0 6H4m0 0l4 4m-4-4l4-4"></path></svg>
+                ಸಾರಿಗೆ ಮಾರ್ಗಗಳು (Transport Routes)
+            </h2>
+            <div class="grid md:grid-cols-3 gap-6">
+                <div class="bg-white/10 backdrop-blur-sm p-6 rounded-xl border border-white/20">
+                    <h3 class="text-xl font-bold text-yellow-300 mb-2">ಮಾರ್ಗ 1</h3>
+                    <p class="text-sm">ಅರ್ಜುನವಾಡ, ಕೋಚರಿ, ಮಸರಗುಪ್ಪಿ</p>
+                </div>
+                <div class="bg-white/10 backdrop-blur-sm p-6 rounded-xl border border-white/20">
+                    <h3 class="text-xl font-bold text-yellow-300 mb-2">ಮಾರ್ಗ 2</h3>
+                    <p class="text-sm">ಗೌಡವಾಡ, ಬಸ್ತವಾಡ, ಬಡಕುಂದ್ರಿ, ಯರಗಟ್ಟಿ, ಯರನಾಳ</p>
+                </div>
+                <div class="bg-white/10 backdrop-blur-sm p-6 rounded-xl border border-white/20">
+                    <h3 class="text-xl font-bold text-yellow-300 mb-2">ಮಾರ್ಗ 3</h3>
+                    <p class="text-sm"> ಮದಿಹಳ್ಳಿ, ಮದಮಕ್ಕನಾಳ, ಬೆಣವಾಡ, ಸುಲ್ತಾನಪುರ, ಗಜಬರವಾಡಿ, ಹುಕ್ಕೇರಿ ಲೋಕಲ್</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer & Contact -->
+    <footer class="bg-gray-900 text-white pt-12 pb-24 md:pb-12">
+        <div class="container mx-auto px-4">
+            <div class="grid md:grid-cols-2 gap-8 mb-8">
+                <div>
+                    <h3 class="text-2xl font-bold text-pink-400 mb-4">ಶ್ರೀ ಮಹಾವೀರ ಕನ್ನಡ ಮಾಧ್ಯಮ ಶಾಲೆ</h3>
+                    <p class="text-gray-400 mb-4">
+                        ಅರ್ಜುನವಾಡ ರೋಡ್, ಹುಕ್ಕೇರಿ - 591309<br>
+                        ಬೆಳಗಾವಿ ಜಿಲ್ಲೆ, ಕರ್ನಾಟಕ
+                    </p>
+         </div>
+                <div>
+                    <h3 class="text-xl font-bold mb-4">ಸಂಪರ್ಕಿಸಿ</h3>
+                    <div class="space-y-3">
+                        <a href="tel:9448389055" class="block bg-gray-800 p-3 rounded-lg hover:bg-pink-600 transition flex items-center justify-between group">
+                            <span>📞 9448389055</span>
+                            <span class="opacity-0 group-hover:opacity-100 transition">Call Now</span>
+                        </a>
+                        <a href="tel:9620887990" class="block bg-gray-800 p-3 rounded-lg hover:bg-pink-600 transition flex items-center justify-between group">
+                            <span>📞 9620887990</span>
+                            <span class="opacity-0 group-hover:opacity-100 transition">Call Now</span>
+                        </a>
+                        <a href="tel:7259895055" class="block bg-gray-800 p-3 rounded-lg hover:bg-pink-600 transition flex items-center justify-between group">
+                            <span>📞 7259895055</span>
+                            <span class="opacity-0 group-hover:opacity-100 transition">Call Now</span>
+                        </a>
+                        <a href="tel:9844215055" class="block bg-gray-800 p-3 rounded-lg hover:bg-pink-600 transition flex items-center justify-between group">
+                            <span>📞 9844215055</span>
+                            <span class="opacity-0 group-hover:opacity-100 transition">Call Now</span>
+                        </a>
+                    </div>
+                </div>
+            </div>
+        <div class="text-center text-gray-500 text-sm border-t border-gray-800 pt-6 space-y-2">
+    
+    <div>
+        &copy; 2026 Shri Mahaveer Kannada Medium School Hukkeri. All rights reserved.
+    </div>
+
+    <div class="text-xs tracking-wide">
+        Made with 
+        <span class="text-pink-500 animate-pulse">❤</span> 
+        by 
+        <span class="font-serif italic text-gray-400 hover:text-pink-500 transition">
+            SB Creation
+        </span>
+    </div>
+
+</div>
+        </div>
+    </footer>
+
+    <!-- Sticky Mobile Call Button -->
+    <div class="fixed bottom-4 right-4 z-50 md:hidden">
+        <a href="tel:9448389055" class="btn-pulse flex items-center justify-center w-16 h-16 bg-green-500 rounded-full shadow-2xl text-white border-4 border-white">
+            <svg class="w-8 h-8" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 5a2 2 0 012-2h3.28a1 1 0 01.948.684l1.498 4.493a1 1 0 01-.502 1.21l-2.257 1.13a11.042 11.042 0 005.516 5.516l1.13-2.257a1 1 0 011.21-.502l4.493 1.498a1 1 0 01.684.949V19a2 2 0 01-2 2h-1C9.716 21 3 14.284 3 6V5z"></path></svg>
+        </a>
+    </div>
+
+    <!-- Carousel Script -->
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            const track = document.getElementById('carouselTrack');
+            const slides = Array.from(track.children);
+            const nextBtn = document.getElementById('nextBtn');
+            const prevBtn = document.getElementById('prevBtn');
+            const indicators = document.querySelectorAll('.indicator');
+            
+            let currentIndex = 0;
+            const slideCount = slides.length;
+            let autoSlideInterval;
+
+            function updateCarousel() {
+                const width = slides[0].getBoundingClientRect().width;
+                track.style.transform = 'translateX(-' + (width * currentIndex) + 'px)';
+                
+                // Update indicators
+                indicators.forEach((ind, idx) => {
+                    if (idx === currentIndex) {
+                        ind.classList.remove('bg-white/50');
+                        ind.classList.add('bg-white', 'scale-125');
+                    } else {
+                        ind.classList.add('bg-white/50');
+                        ind.classList.remove('bg-white', 'scale-125');
+                    }
+                });
+            }
+
+            function nextSlide() {
+                currentIndex = (currentIndex + 1) % slideCount;
+                updateCarousel();
+            }
+
+            function prevSlide() {
+                currentIndex = (currentIndex - 1 + slideCount) % slideCount;
+                updateCarousel();
+            }
+
+            function startAutoSlide() {
+                autoSlideInterval = setInterval(nextSlide, 4000); // Change every 4 seconds
+            }
+
+            function stopAutoSlide() {
+                clearInterval(autoSlideInterval);
+            }
+
+            // Event Listeners
+            nextBtn.addEventListener('click', () => {
+                nextSlide();
+                stopAutoSlide();
+                startAutoSlide();
+            });
+
+            prevBtn.addEventListener('click', () => {
+                prevSlide();
+                stopAutoSlide();
+                startAutoSlide();
+            });
+
+            indicators.forEach((ind, idx) => {
+                ind.addEventListener('click', () => {
+                    currentIndex = idx;
+                    updateCarousel();
+                    stopAutoSlide();
+                    startAutoSlide();
+                });
+            });
+
+            // Handle Window Resize
+            window.addEventListener('resize', updateCarousel);
+
+            // Initialize
+            startAutoSlide();
+            updateCarousel();
+        });
+    </script>
+</body>
+</html>
+
